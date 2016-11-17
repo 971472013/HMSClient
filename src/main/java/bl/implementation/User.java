@@ -13,4 +13,10 @@ public class User {
 		}
 		return false;
 	}
+
+
+	public boolean delay(String orderID) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

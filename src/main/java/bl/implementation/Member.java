@@ -17,6 +17,7 @@ public class Member extends User implements MemberBLService {
 	private double credit;
 	private MemberVO vo;
 	private List<String> creditList;
+	
 	public Member(String ID,String password,String birthday,String name,String phone,double credit) {
 		setID(ID);
 		setPassword(password);
@@ -30,6 +31,7 @@ public class Member extends User implements MemberBLService {
 	public MemberVO getMInformation (String memberID) {
 		return vo;
 	}
+	
 	public boolean saveMInformation (String memberID, MemberVO M) {
 		if(memberID.equals(ID)){
 			setVo(vo);
@@ -37,15 +39,16 @@ public class Member extends User implements MemberBLService {
 		}
 		return false;
 	}
+	
 	public List<String> getCreditList (String memberID) {
 		return creditList;
 	}
-	@Override
+	
 	public String getCredit(String memberID) {
 		// TODO Auto-generated method stub
 		return ""+credit;
 	}
-	@Override
+	
 	public boolean updateCredit(String memberID, double newCredit) {
 		// TODO Auto-generated method stub
 		if(memberID.equals(ID)){
@@ -55,7 +58,7 @@ public class Member extends User implements MemberBLService {
 		}
 		return false;
 	}
-	@Override
+	
 	public boolean checkCredit(String memberID) {
 		// TODO Auto-generated method stub
 		if(credit>=0){
@@ -63,12 +66,12 @@ public class Member extends User implements MemberBLService {
 		}
 		return false;
 	}
-	@Override
+
 	public OrderVO getOrder(String orderID) {
 		// TODO Auto-generated method stub
 		return ordermanager.getOrder(orderID);
 	}
-	@Override
+
 	public List<OrderVO> gerOrderList(String userID) {
 		// TODO Auto-generated method stub
 		if(ID.equals(userID)){
@@ -77,22 +80,22 @@ public class Member extends User implements MemberBLService {
 			return null;
 		}
 	}
-	@Override
+
 	public void cancelOrder(String orderID) {
 		// TODO Auto-generated method stub
 		
 	}
-	@Override
+
 	public ArrayList<OrderVO> getUnOrder(ArrayList<OrderVO> orderList) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
+
 	public ArrayList<OrderVO> getAlOrder(ArrayList<OrderVO> orderList) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	@Override
+
 	public ArrayList<OrderVO> getAandCOrder(ArrayList<OrderVO> orderList) {
 		// TODO Auto-generated method stub
 		return null;
@@ -101,30 +104,39 @@ public class Member extends User implements MemberBLService {
 	public String getPassword() {
 		return passWord;
 	}
+	
 	public void setPassword(String password) {
 		this.passWord = password;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getBirthday() {
 		return birthday;
 	}
+	
 	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
+	
 	public String getPhone() {
 		return phone;
 	}
+	
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
 	public double getCredit() {
 		return credit;
 	}
+	
 	public void setCredit(double credit) {
 		this.credit = credit;
 	}
@@ -149,5 +161,4 @@ public class Member extends User implements MemberBLService {
 		return creditList;
 	}
 
-	
 }

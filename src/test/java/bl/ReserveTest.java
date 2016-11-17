@@ -1,4 +1,4 @@
-package bl.junit.test;
+package bl;
 
 import static org.junit.Assert.*;
 
